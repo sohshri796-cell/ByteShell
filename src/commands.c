@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/commands.h"
+#include "../include/commands.h"    
 
 //help command
-void help(){
+void help(int argc, char **argv){
+    (void)argc; (void)argv; // Suppress unused parameter warnings
     printf("---->HELP<---- \n");
     printf("Functions: \n");
     printf("help --> displays the available commands\n");
@@ -13,12 +14,16 @@ void help(){
 }
 
 //version command
-void version(){
-    printf("Version: ByteShell 0.2\n");
+void version(int argc, char **argv){
+    (void)argc; (void)argv; // Suppress unused parameter warnings
+    printf("Version: ByteShell 0.1\n");
 }
 
 //exit command
-void exit_shell(){
+void exit_shell(int argc, char **argv){
+    (void)argc; (void)argv; // Suppress unused parameter warnings  
     printf("Exiting....\n");
     exit(0);
 }
+
+

@@ -2,9 +2,9 @@
 #define COMMANDS_H
 
 
-void help();
-void version();
-void exit_shell();
+void help(int argc, char **argv);
+void version(int argc, char **argv);
+void exit_shell(int argc, char **argv);
 
 #endif
 
