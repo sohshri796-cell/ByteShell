@@ -4,6 +4,9 @@
 #include "../include/commands.h"
 #include "../include/shell.h"
 
+#define RED   "\033[1;31m"
+#define RESET "\033[0m"
+
 //function pointer
 typedef void (*cmd_func)(int argc, char **argv);
 
@@ -17,6 +20,11 @@ typedef struct {
 static const command_entry command_table[] = {
     {"help",    help},
     {"version", version},
+    {"clear",   clear},
+    {"time",    time_shell},
+    {"repeat", repeat},
+    {"set", set},
+    {"get", get},
     {"exit",    exit_shell}
 };
 
@@ -35,6 +43,6 @@ void identify_command(int argc, char **argv){
         }
     }
         
-    printf("ByteShell: command not found: %s\n", argv[0]);
+    printf(RED "ByteShell: command not found: %s\n" RESET, argv[0]);
     return;
 }

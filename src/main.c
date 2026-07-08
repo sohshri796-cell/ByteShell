@@ -1,8 +1,14 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "../include/commands.h"
 #include "../include/shell.h"
+
+// Color Definitions
+#define YELLOW "\033[1;33m"
+#define CYAN  "\033[1;36m"
+#define RESET "\033[0m"
 
 #define BUFFER_SIZE 1024 //giving the max size to buffer
 #define MAX_ARGS 64 //max args in a command
@@ -12,12 +18,12 @@ int main(){
     char input[BUFFER_SIZE];
     char *argv[MAX_ARGS];
 
-    printf(" ````Welcome to ByteShell!```` \n");
-    printf("write 'help' to get started\n");
+    printf(YELLOW " ````Welcome to ByteShell!```` \n" RESET);
+    printf(YELLOW "write 'help' to get started\n" RESET);
 
     // infinite Loop
     while (1) {
-        printf("ByteShell>> ");
+        printf(CYAN "ByteShell>> " RESET);
         fflush(stdout); // Ensure the input prints immediately
 
         // Read user input safely
